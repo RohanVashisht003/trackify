@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/trackify/static/css/main.45fe3226.css",
-    "main.js": "/trackify/static/js/main.b6731d9f.js",
+    "main.js": "/trackify/static/js/main.3e122838.js",
     "index.html": "/trackify/index.html",
     "main.45fe3226.css.map": "/trackify/static/css/main.45fe3226.css.map",
-    "main.b6731d9f.js.map": "/trackify/static/js/main.b6731d9f.js.map"
+    "main.3e122838.js.map": "/trackify/static/js/main.3e122838.js.map"
   },
   "entrypoints": [
     "static/css/main.45fe3226.css",
-    "static/js/main.b6731d9f.js"
+    "static/js/main.3e122838.js"
   ]
 }
