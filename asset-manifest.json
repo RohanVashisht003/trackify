@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/trackify/static/css/main.45fe3226.css",
+    "main.js": "/trackify/static/js/main.b6731d9f.js",
+    "index.html": "/trackify/index.html",
+    "main.45fe3226.css.map": "/trackify/static/css/main.45fe3226.css.map",
+    "main.b6731d9f.js.map": "/trackify/static/js/main.b6731d9f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45fe3226.css",
+    "static/js/main.b6731d9f.js"
+  ]
+}
