@@ -1,12 +1,11 @@
 .App {
   text-align: center;
   min-height: 100vh;
-  height: auto;
   background-image:url('https://img.freepik.com/free-vector/low-poly-white-background-design_1017-33204.jpg?w=1060&t=st=1659449828~exp=1659450428~hmac=6af871dc7b5d08aeccdd54f02611b399762e3e51017e297083aa5390ef787d6a');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 690px;
+  height: auto;
 }
 
 .App-logo {
@@ -43,3 +42,4 @@
     transform: rotate(360deg);
   }
 }
+

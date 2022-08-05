@@ -8,6 +8,8 @@ import { NONE } from "../constants/TaskStatus";
 import { addHabit } from "../actions/index.js";
 import { useNavigate } from "react-router-dom";
 
+
+// styles for page
 const useStyles = makeStyles({
   field: {
     marginTop: '2rem !important',
@@ -36,8 +38,11 @@ const useStyles = makeStyles({
   }
 });
 
+
 function AddHabits() {
+
   const classes = useStyles();
+  // dispatching data
   const dispatch = useDispatch();
 
   // set title and description
@@ -46,9 +51,11 @@ function AddHabits() {
 
   const navigate = useNavigate();
 
+  // method to handle submits
   const handleSubmit = (event)=>{
     event.preventDefault();
 
+    // if title and details are present
     if(title && details){
       const habit = {
         title,
@@ -92,7 +99,7 @@ function AddHabits() {
           ],
       };
       dispatch(addHabit(habit));
-      navigate('/');
+      navigate('/')
     }
   }
   return (
@@ -104,6 +111,7 @@ function AddHabits() {
       <form onSubmit={handleSubmit} className={classes.formDiv} noValidate>
         <TextField label='Title' required  className={classes.field} fullWidth variant='standard' onChange={(event)=>setTitle(event.target.value)}/>
         <TextField label='Description' required  className={classes.field} fullWidth variant='standard' onChange={(event)=>setDetails(event.target.value)}/>
+
         <Button className={classes.button} type="submit"
             color="primary"
             variant="contained"  endIcon={<ChevronRightIcon />}>
@@ -114,4 +122,4 @@ function AddHabits() {
   )
 }
 
-export default AddHabits
+export default AddHabits;

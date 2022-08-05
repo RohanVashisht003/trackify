@@ -1,20 +1,24 @@
-import { Container, Divider, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React from 'react'
 import HabitDetails from './HabitDetails';
-import CloseIcon from '@mui/icons-material/Close';
+import HighlightOffTwoToneIcon from '@mui/icons-material/HighlightOffTwoTone';
 import { useDispatch } from 'react-redux';
 import { deleteHabit } from '../actions';
 
 const useStyles = makeStyles({
     outerClass:{
-      marginTop:'4rem',
-      minWidth:'85% !important',
       backgroundColor: '#4f89baad',
       borderRadius: '20px',
       boxShadow: 'inset 0px 0px 6px 0px black',
       border:'none',
-      color:'White'
+      color:'White',
+      display:'flex !important',
+      alignItems:'center',
+      flexWrap:"wrap !important",
+      justifyContent:'space-evenly',
+      padding:'10px'
+
     },
     container: {
       display:'inline-flex',
@@ -23,19 +27,34 @@ const useStyles = makeStyles({
       padding: '10px',
       flexDirection:'row'
     },
-    typography:{
-      backgroundColor:'#DF7861',
-      margin:'0px auto !important',
-      width:'30%',
-      borderRadius: '30px',
-      display:'inline-block',
+    textContainer:{
+      backgroundColor:'#2a2a2abd',
+      borderRadius: '15px',
+      color:'white',
+      marginBottom:"5px",
+      padding:'3px',
+      textAlign:'center',
+      overflow:'hidden',
+      textOverflow:'clip'
     },
     closeButton:{
-      top: '1rem',
-      left: '64%',
-      position: 'relative',
-      display:'inline',
-      cursor:'pointer'
+      cursor: 'pointer',
+      display: 'inline',
+      color:'black',
+      margin:'5px',
+      fontSize:'2rem !important',
+    },
+    listOuter:{
+      padding:'33px 20px',
+      margin:'33px 20px',
+      display:'flex',
+      alignItems:'center',
+      justifyContent:'center',
+      flexDirection:'column'
+    },
+    text:{
+      overflow:'hidden',
+      textOverflow:'ellipsis'
     }
    
   });
@@ -44,25 +63,27 @@ const useStyles = makeStyles({
 function HabitComponent({habit,index}) {
     const classes = useStyles();
     const dispatch = useDispatch();
+    
+    //for deleting the habit
     const getIndex=()=>{
       dispatch(deleteHabit(index));
     }
   return (
-    <>
-    <Container className={classes.outerClass}> 
-        
-          <CloseIcon className={classes.closeButton} onClick={()=>getIndex()}/>
-       
-        <Typography variant='h5' className={classes.typography}>
-          {habit.title}
-        </Typography>
-        
-       <p>{habit.description}</p>
-       
+    <li className={classes.listOuter}>
+    <HighlightOffTwoToneIcon className={classes.closeButton} onClick={()=>getIndex()}/>
+      <div style={{width:'90%'}}>
+        <div className={classes.textContainer}>
+          <Typography variant='h6' className={classes.text}>
+            {habit.title}
+          </Typography>
+          <p style={{margin:'0',padding:'0px', fontSize:'13px'}} className={classes.text}>{habit.description}</p> 
+        </div>
       
-        <Container className={classes.container} style={{display:'flex'}}>
+    <Container className={classes.outerClass}> 
+    {/* iterating over the array */}
         {habit.weekDays.map((element) => {
           return (
+            // sending props to component
             <HabitDetails
               element={element}
               key={element.day}
@@ -72,10 +93,9 @@ function HabitComponent({habit,index}) {
             />
           );
         })}
-      </Container>
     </Container>
-    
-    </>
+      </div>
+    </li>
   )
 }
 

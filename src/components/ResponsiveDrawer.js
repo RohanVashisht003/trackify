@@ -26,8 +26,7 @@ const useStyles = makeStyles({
     background: "#cbebff !important",
   },
   anchorStyle:{
-    textDecoration:'none',
-    color:'white'
+    cursor:'pointer'
   }
 })
 
@@ -74,8 +73,9 @@ export default function ResponsiveDrawer() {
     setOpen(false);
   };
 
+
   return (
-    <Box sx={{ display: 'flex'}}>
+    <Box>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
         <Toolbar>
@@ -88,8 +88,8 @@ export default function ResponsiveDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h5" noWrap component="div" style={{margin:'auto'}}>
-            <a href='/' className={classes.anchorStyle}>Trackify</a>
+          <Typography variant="h5" noWrap component="div" style={{margin:'auto'}} onClick={()=>navigate('/')} className={classes.anchorStyle}>
+            Trackify
           </Typography>
         </Toolbar>
       </AppBar>
@@ -125,7 +125,7 @@ export default function ResponsiveDrawer() {
             <ListItem 
             key={item.text} 
             button 
-            onClick={()=>navigate(item.path)} className={
+            onClick={()=>{navigate(item.path); handleDrawerClose();}} className={
               location.pathname === item.path ? classes.activeItem : null
             }>
               <ListItemIcon style={{color:'#1976d2'}}>{item.icon}</ListItemIcon>

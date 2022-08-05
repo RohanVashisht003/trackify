@@ -3,10 +3,12 @@ import { DONE, NONE, NOT_DONE } from '../constants/TaskStatus';
 import { updateStatus } from '../actions/index';
 import { useDispatch } from 'react-redux';
 import { makeStyles} from '@mui/styles';
-import { Divider, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import DoneIcon from '@mui/icons-material/Done';
 import CloseIcon from '@mui/icons-material/Close';
 import RemoveIcon from '@mui/icons-material/Remove';
+
+
 const useStyles = makeStyles({
   container: {
     display: 'flex',
@@ -46,6 +48,7 @@ const useStyles = makeStyles({
 const HabitDetails = ({ element, day, title,no }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  // setting status of each day
   const [status, setStatus] = useState(element.status);
 
   const onClickStatusChange = () => {
