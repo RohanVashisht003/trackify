@@ -1,3 +1,16 @@
+## Hosted Link
+
+### [https://rohanvashisht003.github.io/trackify/](https://rohanvashisht003.github.io/trackify/)
+
+## Features
+ 1. Add multiple habits to track like reading a book, going to the gym etc.
+ 2. Track each habit everyday. These are the 3 statuses of a habit:<br/>
+   2.1. Done - Mark the habit as done for a day.<br/>
+   2.2.  Not done - Mark the habit as not done for a day.<br/>
+   2.3.  None - User did not take any action on a habit for a day.<br/>
+ 3. A view to show all current habits. Here give an add button where you can add a new habit to track.
+ 4. Delete a habit.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
